@@ -1,0 +1,1201 @@
+/* =========================================================
+   AHsan Basharat — Embedded & Electronics Engineer
+   GLOBAL DESIGN SYSTEM
+   ========================================================= */
+
+:root {
+    /* Default Accent */
+    --brand-400: #22d3ee;
+    --brand-500: #06b6d4;
+    --brand-600: #0891b2;
+    --brand-accent: #67e8f9;
+
+    --brand-soft: rgba(6, 182, 212, 0.10);
+    --brand-soft-2: rgba(6, 182, 212, 0.16);
+    --brand-border: rgba(6, 182, 212, 0.35);
+    --brand-glow: rgba(6, 182, 212, 0.35);
+
+    /* Dark Theme */
+    --bg-primary: #020617;
+    --bg-secondary: #0f172a;
+    --bg-tertiary: #111827;
+
+    --card-bg: rgba(15, 23, 42, 0.62);
+    --card-bg-solid: #0f172a;
+
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+
+    --border-primary: rgba(51, 65, 85, 0.60);
+    --border-secondary: rgba(71, 85, 105, 0.45);
+
+    --selection-bg: var(--brand-500);
+    --selection-text: #020617;
+
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.35s ease;
+    --transition-slow: 0.6s ease;
+}
+
+
+/* =========================================================
+   CYAN
+   ========================================================= */
+
+[data-theme="cyan"] {
+    --brand-400: #22d3ee;
+    --brand-500: #06b6d4;
+    --brand-600: #0891b2;
+    --brand-accent: #67e8f9;
+
+    --brand-soft: rgba(6, 182, 212, 0.10);
+    --brand-soft-2: rgba(6, 182, 212, 0.16);
+    --brand-border: rgba(6, 182, 212, 0.35);
+    --brand-glow: rgba(6, 182, 212, 0.35);
+}
+
+
+/* =========================================================
+   EMERALD
+   ========================================================= */
+
+[data-theme="emerald"] {
+    --brand-400: #34d399;
+    --brand-500: #10b981;
+    --brand-600: #059669;
+    --brand-accent: #6ee7b7;
+
+    --brand-soft: rgba(16, 185, 129, 0.10);
+    --brand-soft-2: rgba(16, 185, 129, 0.16);
+    --brand-border: rgba(16, 185, 129, 0.35);
+    --brand-glow: rgba(16, 185, 129, 0.35);
+}
+
+
+/* =========================================================
+   PURPLE
+   ========================================================= */
+
+[data-theme="purple"] {
+    --brand-400: #c084fc;
+    --brand-500: #a855f7;
+    --brand-600: #9333ea;
+    --brand-accent: #d8b4fe;
+
+    --brand-soft: rgba(168, 85, 247, 0.10);
+    --brand-soft-2: rgba(168, 85, 247, 0.16);
+    --brand-border: rgba(168, 85, 247, 0.35);
+    --brand-glow: rgba(168, 85, 247, 0.35);
+}
+
+
+/* =========================================================
+   AMBER
+   ========================================================= */
+
+[data-theme="amber"] {
+    --brand-400: #fbbf24;
+    --brand-500: #f59e0b;
+    --brand-600: #d97706;
+    --brand-accent: #fcd34d;
+
+    --brand-soft: rgba(245, 158, 11, 0.10);
+    --brand-soft-2: rgba(245, 158, 11, 0.16);
+    --brand-border: rgba(245, 158, 11, 0.35);
+    --brand-glow: rgba(245, 158, 11, 0.35);
+}
+
+
+/* =========================================================
+   LIGHT MODE
+   ========================================================= */
+
+html.light-mode {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f1f5f9;
+
+    --card-bg: rgba(255, 255, 255, 0.72);
+    --card-bg-solid: #ffffff;
+
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --text-dim: #94a3b8;
+
+    --border-primary: rgba(148, 163, 184, 0.35);
+    --border-secondary: rgba(148, 163, 184, 0.25);
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary);
+
+    transition:
+        background-color 0.45s ease,
+        color 0.45s ease;
+}
+
+::selection {
+    background: var(--selection-bg);
+    color: var(--selection-text);
+}
+
+
+/* =========================================================
+   CUSTOM SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg,
+        var(--brand-500),
+        var(--brand-600)
+    );
+
+    border-radius: 999px;
+
+    box-shadow:
+        0 0 10px var(--brand-glow);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-accent);
+}
+
+* {
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        var(--brand-500)
+        var(--bg-primary);
+}
+
+
+/* =========================================================
+   GLASS CARD
+   ========================================================= */
+
+.glass-card {
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.045),
+            rgba(255,255,255,0.012)
+        ),
+        var(--card-bg);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border:
+        1px solid var(--border-primary);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.16);
+
+    transition:
+        transform 0.4s cubic-bezier(.16,1,.3,1),
+        border-color 0.4s ease,
+        box-shadow 0.4s ease,
+        background-color 0.4s ease;
+}
+
+.glass-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent 20%,
+            var(--brand-soft-2),
+            transparent 80%
+        );
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.4s ease;
+}
+
+.glass-card:hover {
+    transform:
+        translateY(-6px);
+
+    border-color:
+        var(--brand-border);
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,0.25),
+        0 0 30px var(--brand-glow);
+}
+
+.glass-card:hover::before {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   GLOBAL ACCENT OVERRIDES
+   These make existing Tailwind cyan/blue classes dynamic.
+   ========================================================= */
+
+
+/* TEXT */
+
+#main-portfolio .text-cyan-300,
+#main-portfolio .text-cyan-400,
+#main-portfolio .text-cyan-500,
+#main-portfolio .text-blue-400,
+#main-portfolio .text-blue-500,
+
+#intro-screen .text-cyan-300,
+#intro-screen .text-cyan-400,
+#intro-screen .text-cyan-500,
+#intro-screen .text-blue-400,
+#intro-screen .text-blue-500,
+
+#cert-modal .text-cyan-300,
+#cert-modal .text-cyan-400,
+#cert-modal .text-cyan-500 {
+    color: var(--brand-400) !important;
+}
+
+
+/* HOVER TEXT */
+
+#main-portfolio .hover\:text-cyan-300:hover,
+#main-portfolio .hover\:text-cyan-400:hover,
+#main-portfolio .hover\:text-blue-400:hover,
+
+#intro-screen .hover\:text-cyan-400:hover {
+    color: var(--brand-accent) !important;
+}
+
+
+/* BACKGROUNDS */
+
+#main-portfolio .bg-cyan-400,
+#main-portfolio .bg-cyan-500,
+#main-portfolio .bg-cyan-600,
+#main-portfolio .bg-blue-500,
+#main-portfolio .bg-blue-600,
+
+#intro-screen .bg-cyan-400,
+#intro-screen .bg-cyan-500,
+#intro-screen .bg-cyan-600 {
+    background-color: var(--brand-500) !important;
+}
+
+
+/* DARK ACCENT BACKGROUNDS */
+
+#main-portfolio .bg-cyan-950,
+#main-portfolio .bg-cyan-950\/80,
+#main-portfolio .bg-cyan-900,
+#main-portfolio .bg-cyan-900\/50,
+
+#cert-modal .bg-cyan-950,
+#cert-modal .bg-cyan-900 {
+    background-color: var(--brand-soft-2) !important;
+}
+
+
+/* BORDERS */
+
+#main-portfolio .border-cyan-500,
+#main-portfolio .border-cyan-600,
+#main-portfolio .border-cyan-700,
+#main-portfolio .border-cyan-800,
+#main-portfolio .border-cyan-800\/40,
+#main-portfolio .border-cyan-800\/50,
+
+#intro-screen .border-cyan-500,
+#intro-screen .border-cyan-600 {
+    border-color: var(--brand-border) !important;
+}
+
+
+/* HOVER BORDER */
+
+#main-portfolio .hover\:border-cyan-500:hover,
+#main-portfolio .hover\:border-cyan-700:hover,
+#main-portfolio .hover\:border-cyan-800:hover {
+    border-color: var(--brand-500) !important;
+}
+
+
+/* RING */
+
+#main-portfolio .ring-cyan-400,
+#main-portfolio .ring-cyan-500 {
+    --tw-ring-color: var(--brand-500) !important;
+}
+
+
+/* HOVER BACKGROUND */
+
+#main-portfolio .hover\:bg-cyan-900\/50:hover,
+#main-portfolio .hover\:bg-cyan-900:hover,
+#main-portfolio .hover\:bg-cyan-950\/50:hover {
+    background-color: var(--brand-soft-2) !important;
+}
+
+
+/* =========================================================
+   GRADIENT OVERRIDES
+   ========================================================= */
+
+#main-portfolio .from-cyan-400,
+#main-portfolio .from-cyan-500,
+#main-portfolio .from-blue-500,
+#main-portfolio .from-blue-600,
+
+#intro-screen .from-cyan-400,
+#intro-screen .from-cyan-500,
+#intro-screen .from-blue-500 {
+    --tw-gradient-from:
+        var(--brand-400)
+        var(--tw-gradient-from-position);
+
+    --tw-gradient-to:
+        var(--brand-600)
+        var(--tw-gradient-to-position);
+}
+
+
+#main-portfolio .to-cyan-400,
+#main-portfolio .to-cyan-500,
+#main-portfolio .to-cyan-600,
+#main-portfolio .to-blue-500,
+#main-portfolio .to-blue-600,
+
+#intro-screen .to-cyan-400,
+#intro-screen .to-cyan-500,
+#intro-screen .to-blue-500 {
+    --tw-gradient-to:
+        var(--brand-600)
+        var(--tw-gradient-to-position);
+}
+
+
+/* =========================================================
+   SHADOW / GLOW
+   ========================================================= */
+
+#main-portfolio .shadow-cyan-500\/25,
+#main-portfolio .shadow-cyan-500\/40,
+#main-portfolio .shadow-cyan-500\/50,
+#main-portfolio .shadow-blue-500\/25,
+#main-portfolio .shadow-blue-500\/40,
+
+#intro-screen .shadow-cyan-500\/50 {
+    --tw-shadow-color: var(--brand-glow) !important;
+}
+
+
+/* =========================================================
+   HERO PROFILE GLOW
+   ========================================================= */
+
+#main-portfolio .hero-glow {
+    background:
+        linear-gradient(
+            90deg,
+            var(--brand-500),
+            var(--brand-600)
+        ) !important;
+
+    box-shadow:
+        0 0 35px var(--brand-glow);
+}
+
+
+/* =========================================================
+   INTRO SCREEN
+   ========================================================= */
+
+#intro-screen {
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            var(--brand-soft-2),
+            transparent 38%
+        ),
+        #020617 !important;
+
+    overflow: hidden;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(.16,1,.3,1),
+        filter 0.8s ease;
+}
+
+
+/* Animated engineering grid */
+
+#intro-screen::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        55px 55px;
+
+    mask-image:
+        radial-gradient(
+            ellipse at center,
+            black 20%,
+            transparent 75%
+        );
+
+    animation:
+        gridMove 18s linear infinite;
+}
+
+@keyframes gridMove {
+
+    from {
+        transform:
+            translate3d(0,0,0);
+    }
+
+    to {
+        transform:
+            translate3d(55px,55px,0);
+    }
+}
+
+
+/* Circuit canvas */
+
+#circuit-canvas {
+    width: 100%;
+    height: 100%;
+
+    opacity: 0.58;
+
+    filter:
+        drop-shadow(
+            0 0 8px var(--brand-500)
+        );
+}
+
+
+/* =========================================================
+   INTRO TEXT
+   ========================================================= */
+
+#intro-quote,
+#intro-name,
+#intro-loader {
+    will-change:
+        transform,
+        opacity,
+        filter;
+}
+
+
+#intro-user-name {
+    text-shadow:
+        0 0 18px var(--brand-glow),
+        0 0 50px var(--brand-glow);
+}
+
+
+/* Quote icon */
+
+#intro-quote i {
+    color: var(--brand-400) !important;
+
+    animation:
+        quotePulse 2s ease-in-out infinite;
+}
+
+@keyframes quotePulse {
+
+    0%,100% {
+        opacity: 0.45;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+
+/* =========================================================
+   LOADING BAR
+   ========================================================= */
+
+#loading-bar {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--brand-600),
+            var(--brand-500),
+            var(--brand-accent)
+        ) !important;
+
+    box-shadow:
+        0 0 15px var(--brand-glow),
+        0 0 30px var(--brand-glow);
+
+    transition:
+        width 0.08s linear;
+}
+
+
+#loading-bar::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -50%;
+
+    width: 50%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.85),
+            transparent
+        );
+
+    animation:
+        loadingShine 1.2s infinite;
+}
+
+@keyframes loadingShine {
+
+    from {
+        left: -50%;
+    }
+
+    to {
+        left: 120%;
+    }
+}
+
+
+/* =========================================================
+   INTRO EXIT
+   ========================================================= */
+
+.intro-exit {
+    opacity: 0 !important;
+
+    transform:
+        scale(1.08)
+        translateY(-12px);
+
+    filter:
+        blur(12px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+
+.scroll-reveal {
+    opacity: 0;
+
+    transform:
+        translateY(35px)
+        scale(0.98);
+
+    filter:
+        blur(4px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(.16,1,.3,1),
+        filter 0.8s ease;
+}
+
+
+.scroll-reveal.active {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    filter:
+        blur(0);
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.nav-link {
+    position: relative;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--brand-500),
+            var(--brand-accent)
+        );
+
+    box-shadow:
+        0 0 8px var(--brand-glow);
+
+    transition:
+        width 0.3s ease;
+}
+
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   CUSTOMIZER
+   ========================================================= */
+
+#customizer-panel {
+    box-shadow:
+        -20px 0 60px rgba(0,0,0,0.30);
+}
+
+
+/* =========================================================
+   FORM FOCUS
+   ========================================================= */
+
+#main-portfolio input:focus,
+#main-portfolio textarea:focus,
+#main-portfolio select:focus {
+    border-color:
+        var(--brand-500) !important;
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 1px var(--brand-500),
+        0 0 22px var(--brand-glow);
+}
+
+
+/* =========================================================
+   BUTTON GLOW
+   ========================================================= */
+
+.theme-button {
+    background:
+        linear-gradient(
+            135deg,
+            var(--brand-500),
+            var(--brand-600)
+        );
+
+    color: white;
+
+    box-shadow:
+        0 8px 25px var(--brand-glow);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.theme-button:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 35px var(--brand-glow);
+}
+
+
+/* =========================================================
+   THEME UTILITY CLASSES
+   ========================================================= */
+
+.theme-text {
+    color: var(--brand-400) !important;
+}
+
+.theme-bg {
+    background-color: var(--brand-500) !important;
+}
+
+.theme-border {
+    border-color: var(--brand-border) !important;
+}
+
+.theme-soft {
+    background-color: var(--brand-soft-2) !important;
+}
+
+.theme-glow {
+    box-shadow:
+        0 0 30px var(--brand-glow);
+}
+
+
+/* =========================================================
+   LIGHT MODE OVERRIDES FOR EXISTING TAILWIND CLASSES
+   ========================================================= */
+
+html.light-mode body {
+    background-color:
+        var(--bg-primary) !important;
+
+    color:
+        var(--text-primary) !important;
+}
+
+
+html.light-mode #main-portfolio {
+    color:
+        var(--text-primary);
+}
+
+
+/* Main dark backgrounds */
+
+html.light-mode #main-portfolio .bg-slate-950 {
+    background-color:
+        #f8fafc !important;
+}
+
+html.light-mode #main-portfolio .bg-slate-950\/50 {
+    background-color:
+        rgba(241,245,249,0.75) !important;
+}
+
+html.light-mode #main-portfolio .bg-slate-900 {
+    background-color:
+        #ffffff !important;
+}
+
+html.light-mode #main-portfolio .bg-slate-800 {
+    background-color:
+        #e2e8f0 !important;
+}
+
+
+/* Text */
+
+html.light-mode #main-portfolio .text-white {
+    color:
+        #0f172a !important;
+}
+
+html.light-mode #main-portfolio .text-slate-100,
+html.light-mode #main-portfolio .text-slate-200 {
+    color:
+        #1e293b !important;
+}
+
+html.light-mode #main-portfolio .text-slate-300 {
+    color:
+        #334155 !important;
+}
+
+html.light-mode #main-portfolio .text-slate-400 {
+    color:
+        #475569 !important;
+}
+
+html.light-mode #main-portfolio .text-slate-500 {
+    color:
+        #64748b !important;
+}
+
+
+/* Borders */
+
+html.light-mode #main-portfolio .border-slate-900,
+html.light-mode #main-portfolio .border-slate-800 {
+    border-color:
+        #e2e8f0 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    #circuit-canvas {
+        opacity: 0.35;
+    }
+
+    .glass-card:hover {
+        transform:
+            translateY(-3px);
+    }
+
+    #intro-user-name {
+        text-shadow:
+            0 0 12px var(--brand-glow),
+            0 0 30px var(--brand-glow);
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        scroll-behavior:
+            auto !important;
+    }
+}
+/* =========================================================
+   PREMIUM LIGHT MODE NAVBAR
+   ========================================================= */
+
+/* Main navbar/header */
+html.light-mode #navbar {
+    background: rgba(255, 255, 255, 0.88) !important;
+
+    border-bottom:
+        1px solid rgba(148, 163, 184, 0.25) !important;
+
+    box-shadow:
+        0 8px 30px rgba(15, 23, 42, 0.07);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+html.light-mode #navbar > div > a {
+    color: var(--brand-600) !important;
+}
+
+html.light-mode #navbar > div > a span {
+    color: var(--brand-600) !important;
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+   ========================================================= */
+
+html.light-mode #navbar nav {
+    background: transparent !important;
+}
+
+
+/* Navigation links */
+html.light-mode #navbar nav .nav-link {
+    position: relative;
+
+    color: #475569 !important;
+
+    background: transparent !important;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* Hover */
+html.light-mode #navbar nav .nav-link:hover {
+    color: var(--brand-600) !important;
+
+    background: transparent !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* Active underline */
+html.light-mode #navbar nav .nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    margin: auto;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--brand-500),
+            var(--brand-accent)
+        );
+
+    box-shadow:
+        0 0 8px var(--brand-glow);
+
+    transition:
+        width 0.3s ease;
+}
+
+html.light-mode #navbar nav .nav-link:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   NAVBAR ACTION BUTTONS
+   ========================================================= */
+
+html.light-mode #navbar #customizer-toggle {
+    background: rgba(241, 245, 249, 0.85) !important;
+
+    border-color:
+        rgba(148, 163, 184, 0.30) !important;
+
+    color: var(--brand-600) !important;
+}
+
+
+html.light-mode #navbar #customizer-toggle:hover {
+    background:
+        var(--brand-soft-2) !important;
+
+    border-color:
+        var(--brand-border) !important;
+
+    color: var(--brand-600) !important;
+}
+
+
+/* Mobile menu button */
+html.light-mode #navbar #mobile-menu-btn {
+    color: #334155 !important;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+html.light-mode #mobile-menu {
+    background:
+        rgba(255, 255, 255, 0.96) !important;
+
+    border-bottom:
+        1px solid rgba(148, 163, 184, 0.25) !important;
+
+    box-shadow:
+        0 15px 30px rgba(15, 23, 42, 0.08);
+}
+
+
+html.light-mode #mobile-menu .mobile-link {
+    color: #475569 !important;
+
+    background: transparent !important;
+}
+
+
+html.light-mode #mobile-menu .mobile-link:hover {
+    color: var(--brand-600) !important;
+
+    background:
+        var(--brand-soft) !important;
+}
+
+
+/* =========================================================
+   REMOVE ANY ACCIDENTAL WHITE BACKGROUND FROM LINKS
+   ========================================================= */
+
+html.light-mode #navbar a {
+    background-color: transparent !important;
+}
+
+
+/* =========================================================
+   CUSTOMIZER BUTTON ICON
+   ========================================================= */
+
+html.light-mode #navbar .text-cyan-400,
+html.light-mode #navbar .text-cyan-300 {
+    color: var(--brand-600) !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE NAVBAR
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    html.light-mode #navbar {
+        background:
+            rgba(255, 255, 255, 0.94) !important;
+    }
+
+}
+
+/* =========================================================
+   3D PCB MOTHERBOARD BACKGROUND  (pcb-background.js)
+   Fixed behind everything; hidden automatically in light mode.
+   ========================================================= */
+
+#pcb-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+
+    /* Fallback if WebGL / JS is unavailable: dark navy + faint engineering grid */
+    background:
+        radial-gradient(ellipse at 70% 15%, rgba(6, 182, 212, 0.10), transparent 55%),
+        repeating-linear-gradient(0deg,  rgba(148, 163, 184, 0.035) 0 1px, transparent 1px 48px),
+        repeating-linear-gradient(90deg, rgba(148, 163, 184, 0.035) 0 1px, transparent 1px 48px),
+        #040914;
+}
+
+#pcb-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.6s ease;
+}
+
+#pcb-bg.ready #pcb-canvas { opacity: 1; }
+#pcb-bg.no-webgl #pcb-canvas { display: none; }
+
+/* Readability overlay: darker centre column, lighter edges so the chips peek out */
+#pcb-bg .pcb-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 70% 62% at 50% 45%, rgba(2, 6, 23, 0.62), rgba(2, 6, 23, 0.14) 100%),
+        linear-gradient(180deg, rgba(2, 6, 23, 0.50) 0%, rgba(2, 6, 23, 0.34) 40%, rgba(2, 6, 23, 0.70) 100%);
+}
+
+/* Light mode: same real 3D board with a pale solder mask (colours switched in pcb-background.js) */
+html.light-mode #pcb-bg { background: #dde4ec; }
+html.light-mode #pcb-bg .pcb-overlay {
+    background:
+        radial-gradient(ellipse 70% 62% at 50% 45%, rgba(248, 250, 252, 0.66), rgba(248, 250, 252, 0.10) 100%),
+        linear-gradient(180deg, rgba(248, 250, 252, 0.40) 0%, rgba(248, 250, 252, 0.20) 40%, rgba(248, 250, 252, 0.55) 100%);
+}
+
+/* Let the board show through the alternating section bands and footer */
+#main-portfolio section.bg-slate-950\/50 { background-color: rgba(2, 6, 23, 0.38) !important; }
+#main-portfolio footer.bg-slate-950      { background-color: rgba(2, 6, 23, 0.88) !important; }
+
+/* Keep hero copy crisp over the busiest part of the scene */
+html:not(.light-mode) #home h1,
+html:not(.light-mode) #home h2,
+html:not(.light-mode) #home p { text-shadow: 0 2px 18px rgba(2, 6, 23, 0.85); }
+
+@media (max-width: 768px) {
+    #pcb-bg .pcb-overlay {
+        background:
+            radial-gradient(ellipse 100% 70% at 50% 45%, rgba(2, 6, 23, 0.72), rgba(2, 6, 23, 0.30) 100%),
+            linear-gradient(180deg, rgba(2, 6, 23, 0.55), rgba(2, 6, 23, 0.78));
+    }
+}
