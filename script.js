@@ -18,7 +18,7 @@ const portfolioData = {
             "ahsanbasharatali38@gmail.com",
 
         location:
-            "ITU, Pakistan",
+            "Lahore, Pakistan",
 
         github:
             "https://github.com/Ahsan-web-hue",
@@ -27,7 +27,7 @@ const portfolioData = {
             "www.linkedin.com/in/ahsan-basharat-35911129b",
 
         cvLink:
-            "assets/cv/resume.pdf",
+            "Ahsan_Basharat_CV.pdf",
 
         profileImg:
             "Ahsan Image.png",
@@ -377,7 +377,7 @@ const portfolioData = {
             "Timers_Lab_Manual_STM32.pdf"
         },
         
-               {
+        {
             title:
             "UART-Between-STN32NF103RB-and-Aurdino-UNO",
             description:
@@ -385,22 +385,49 @@ const portfolioData = {
             image:
             "urt.jpeg",
             technologies: [
-    "STM32F103RB",
-    "Arduino Uno",
-    "UART Communication",
-    "USART1",
-    "STM32 HAL Library",
-    "Serial Communication",
-    "115200 Baud Rate",
-    "TX/RX Configuration",
-    "Two-Way Communication",
-    "Embedded C",
-    "STM32CubeIDE"
+                "STM32F103RB",
+                "Arduino Uno",
+                "UART Communication",
+                "USART1",
+                "STM32 HAL Library",
+                "Serial Communication",
+                "115200 Baud Rate",
+                "TX/RX Configuration",
+                "Two-Way Communication",
+                "Embedded C",
+                "STM32CubeIDE"
 ],            github:
             "https://github.com/Ahsan-web-hue/UART-Between-STN32NF103RB-and-Aurdino-UNO.git",
             demo:
             "UART_Lab_Manual_STM32.pdf"
         },
+        {
+            title: "University Management System",
+
+            description: "Designed and developed a full-stack University Management System featuring a responsive user interface using React.js. Developed the frontend and backend to support application functionality and data processing, demonstrating skills in web design, frontend development, backend development, and full-stack application development.",
+
+            image: "UMS.png",
+
+            technologies: [
+                "React.js",
+                "JavaScript",
+                "HTML5",
+                "CSS3",
+                "Responsive Web Design",
+                "Frontend Development",
+                "Backend Development",
+                "REST API Integration",
+                "Full-Stack Development"
+            ],
+
+            github:
+            "ahsanwebdeveloper.netlify.app",
+
+            demo:
+             "ahsanwebdeveloper.netlify.app"
+
+},
+
 
 
 
@@ -570,7 +597,7 @@ const portfolioData = {
 
         {
             degree:
-                "B.S. in Electronics & Embedded Engineering",
+                "B.S. in Electrical Engineering",
 
             institution:
                 "Information Technology University (ITU) ",
@@ -579,10 +606,8 @@ const portfolioData = {
                 "2023 – 2027",
 
             details:
-                "Focus on Embedded Microcontrollers, Digital Signal Processing, and VLSI Systems Design.",
+                "Focus on Embedded Sensors, Microcontrollers, Digital Signal Processing, and VLSI Systems Design.",
 
-            achievements:
-                "Dean's Honor List | Capstone First Prize"
         }
 
     ],
@@ -1657,17 +1682,7 @@ document.getElementById(
                         </p>
 
 
-                        <p
-                            class="text-xs font-mono text-cyan-300/80 pt-1"
-                        >
 
-                            <i
-                                class="fa-solid fa-award mr-1"
-                            ></i>
-
-                            ${edu.achievements}
-
-                        </p>
 
                     </div>
 
